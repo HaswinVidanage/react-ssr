@@ -9751,8 +9751,10 @@ var React = __webpack_require__(49);
 var ReactDOM = __webpack_require__(98);
 var Component = __webpack_require__(184);
 
+var props =  window.PROPS;
+
 ReactDOM.render(
-  React.createElement(Component), document
+  React.createElement(Component, props), document
 )
 
 
@@ -22405,7 +22407,7 @@ var Component = React.createClass({
         React.createElement(
           'title',
           null,
-          'Universal App with React'
+          this.props.title
         ),
         React.createElement('link', { rel: 'stylesheet', href: '/style.css' })
       ),
@@ -22418,7 +22420,7 @@ var Component = React.createClass({
           React.createElement(
             'h1',
             null,
-            'jsx component heading'
+            this.props.title
           ),
           React.createElement(
             'p',
@@ -22431,6 +22433,9 @@ var Component = React.createClass({
             'Click Me'
           )
         ),
+        React.createElement('script', { dangerouslySetInnerHTML: {
+            __html: 'window.PROPS=' + JSON.stringify(this.props)
+          } }),
         React.createElement('script', { src: '/bundle.js' })
       )
     );

@@ -12,9 +12,9 @@ var app =  express();
 app.use(express.static('public'));
 
 app.get('/', function(request, response){
-
+  var props = {title : 'Universal React App'};
   var html = ReactDOMServer.renderToString(
-    React.createElement(Component)
+    React.createElement(Component, props)
   );
   response.send(html);
 });
