@@ -1,0 +1,24 @@
+{
+  "name": "server-side-react",
+  "version": "1.0.0",
+  "description": "Server side in react done in the most basic way possible",
+  "main": "server.js",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Haswin Vidanage",
+  "license": "ISC"
+}
