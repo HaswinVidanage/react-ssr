@@ -28133,11 +28133,33 @@ var Link = __webpack_require__(216).Link;
 
 module.exports = React.createClass({
   displayName: 'Layout',
+
+  getInitialState: function () {
+    return {
+      isLoading: false
+    };
+  },
   _handleClick: function () {
-    alert('Button clicked!');
+    this.setState({
+      isLoading: true
+    });
+
+    //alert('Clicked');
   },
   render: function () {
     var custom = this.props.custom;
+    var { isLoading } = this.state;
+    var renderLoading = function () {
+      if (isLoading) return React.createElement(
+        'h3',
+        null,
+        'LOADING ....'
+      );else return React.createElement(
+        'h3',
+        null,
+        'IDLEg'
+      );
+    };
     return React.createElement(
       'html',
       null,
@@ -28162,6 +28184,7 @@ module.exports = React.createClass({
             null,
             custom.title
           ),
+          renderLoading(),
           React.createElement(
             'p',
             null,
